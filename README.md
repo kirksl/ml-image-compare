@@ -39,6 +39,9 @@ To set up the project, follow these steps:
     python tests.py
     ```
 
+2. Review image differences captured by pixel matching and structural similarity index techniques within `results` folder
+
+
 ## Deep Learning Technologies
 
 ### TensorFlow
