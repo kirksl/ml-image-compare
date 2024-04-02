@@ -85,7 +85,7 @@ class Images:
 
         return score
 
-    def cosine_similarity(self):
+    def cosine_similarity(self, tolerance=0.000001):
         imageA_resized = cv2.resize(self.imageA, (224, 224))
         imageB_resized = cv2.resize(self.imageB, (224, 224))
 
@@ -98,7 +98,7 @@ class Images:
         score = cosine_similarity(imageA_features, imageB_features)[0][0]
         print(f'Cosine Similarity Score: {score}')
 
-        if score != 1.0:
+        if abs(score - 1.0) >= tolerance:
             self.pixel_difference()
             self.structural_similarity_index()
 
